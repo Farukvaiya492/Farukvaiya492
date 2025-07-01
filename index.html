@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="F BD Tunnel Pro - বাংলাদেশের জন্য দ্রুত এবং নিরাপদ VPN সার্ভিস, রবি এবং এয়ারটেল নেটওয়ার্কে স্ট্রিমিং এবং সোশ্যাল মিডিয়া বাইপাসের জন্য।">
+    <meta name="keywords" content="F BD Tunnel Pro, VPN, Bangladesh, Robi, Airtel, Streaming, Social Media, Bypass">
+    <meta name="author" content="F BD Tunnel Pro">
+    <title>F BD Tunnel Pro | বাংলাদেশের শীর্ষ VPN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Noto Sans Bengali', 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333333;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        body.black-theme {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            animation: slideIn 1s ease-in-out;
+        }
+
+        h1 span {
+            background: linear-gradient(90deg, #00ff87, #60efff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.tagline {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: slideIn 1.2s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .theme-picker {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 3;
+        }
+
+        .theme-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .theme-btn:hover {
+            transform: scale(1.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .theme-btn.white {
+            background: #ffffff;
+            border: 2px solid #000000;
+        }
+
+        .theme-btn.black {
+            background: #000000;
+            border: 2px solid #ffffff;
+        }
+
+        .music-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: #ffffff;
+            border: 2px solid #00ff87;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+            z-index: 3;
+            padding: 0;
+        }
+
+        .music-toggle:hover {
+            background: #00ff87;
+            border-color: #ffffff;
+            transform: scale(1.1);
+        }
+
+        .music-toggle svg {
+            width: 24px;
+            height: 24px;
+            fill: #1a1a1a;
+        }
+
+        .music-off-icon {
+            display: none;
+        }
+
+        audio {
+            display: none;
+        }
+
+        .link-list, .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .link-item, .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .link-btn, .contact-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, #26A5E4, #0D8BD9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .link-btn:hover, .contact-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 8px 20px rgba(38, 165, 228, 0.5);
+        }
+
+        .link-btn svg, .contact-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff;
+        }
+
+        .link-label, .contact-label {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: inherit;
+            margin-top: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        section {
+            margin: 60px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: slideIn 1.8s ease-in-out;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #00ff87, #60efff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 20px 0 10px;
+            color: inherit;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            color: inherit;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 20px 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+            background: linear-gradient(90deg, #ff006e, #ffbe0b);
+            color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 0, 110, 0.5);
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 0.9rem;
+            padding: 20px 0;
+            color: inherit;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideIn 2s ease-in-out;
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.2rem; }
+            p.tagline { font-size: 1.1rem; }
+            .link-btn, .contact-btn { width: 40px; height: 40px; }
+            .link-btn svg, .contact-btn svg { width: 20px; height: 20px; }
+            .link-label, .contact-label { font-size: 0.75rem; }
+            .profile-img { width: 120px; height: 120px; }
+            h2 { font-size: 1.8rem; }
+            h3 { font-size: 1.4rem; }
+            p { font-size: 1rem; }
+            .theme-btn { width: 25px; height: 25px; }
+            .music-toggle { width: 40px; height: 40px; }
+            .music-toggle svg { width: 20px; height: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-picker">
+        <button class="theme-btn white" onclick="setTheme('white')"></button>
+        <button class="theme-btn black" onclick="setTheme('black')"></button>
+    </div>
+
+    <button class="music-toggle" onclick="toggleMusic()">
+        <svg class="music-on-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+        </svg>
+        <svg class="music-off-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18V5l12-2v13M3 3l18 18"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+        </svg>
+    </button>
+
+    <audio id="bgm" loop>
+        <source src="https://github.com/jubairbro/Faw/raw/refs/heads/main/audio.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+        <img src="https://i.ibb.co/qLXdPcFB/Picsart-25-07-01-20-02-18-009.png" alt="F BD Tunnel Pro" class="profile-img">
+        <h1>F BD <span>Tunnel Pro</span></h1>
+        <p class="tagline">বাংলাদেশের জন্য নিরাপদ ও দ্রুত VPN সার্ভিস</p>
+
+        <div class="link-list">
+            <div class="link-item">
+                <a href="https://t.me/Farukvaiya01" class="link-btn telegram-btn" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21.6 2.4l-2.6 12.2c-.2.9-.8 1.2-1.6 1.1l-4.1-3-2.1 2c-.2.2-.4.4-.8.4l.3-4.2 7.6-6.9c.3-.3 0-.5-.5-.3l-9.4 5.9-4-1.2c-.9-.3-1-1.2-.2-1.7l16.2-6.2c.7-.3 1.4.1 1.6.9z"/>
+                    </svg>
+                </a>
+                <span class="link-label"Owner id</span>
+            </div>
+            <div class="link-item">
+                <a href="https://t.me/FBD_Tunnel_Pro" class="link-btn telegram-btn" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21.6 2.4l-2.6 12.2c-.2.9-.8 1.2-1.6 1.1l-4.1-3-2.1 2c-.2.2-.4.4-.8.4l.3-4.2 7.6-6.9c.3-.3 0-.5-.5-.3l-9.4 5.9-4-1.2c-.9-.3-1-1.2-.2-1.7l16.2-6.2c.7-.3 1.4.1 1.6.9z"/>
+                    </svg>
+                </a>
+                <span class="link-label">F BD Tunnel Group</span>
+            </div>
+        </div>
+
+        <a href="https://t.me/FBD_Tunnel_Pro" class="cta-btn" target="_blank">এখনই ডাউনলোড করুন</a>
+
+        <section class="about">
+            <h2>F BD Tunnel Pro VPN সম্পর্কে</h2>
+            <p>
+                <strong>F BD Tunnel Pro VPN</strong> হলো বাংলাদেশের ব্যবহারকারীদের জন্য বিশেষভাবে ডিজাইন করা একটি শক্তিশালী এবং নির্ভরযোগ্য VPN সার্ভিস, যা রবি এবং এয়ারটেল নেটওয়ার্কে স্ট্রিমিং, সোশ্যাল মিডিয়া, এবং সকল প্রকার নেটওয়ার্ক বাধা বাইপাস করার জন্য সর্বোত্তম সমাধান প্রদান করে। আমাদের লক্ষ্য হলো বাংলাদেশের ইন্টারনেট ব্যবহারকারীদের জন্য একটি নিরাপদ, দ্রুত, এবং সীমাবদ্ধতামুক্ত ইন্টারনেট অভিজ্ঞতা নিশ্চিত করা।
+            </p>
+            <h3>F BD Tunnel Pro VPN-এর প্রধান বৈশিষ্ট্য</h3>
+            <p>
+                <strong>নিরাপদ এবং এনক্রিপ্টেড সংযোগ</strong>: F BD Tunnel Pro VPN AES-256 এনক্রিপশন ব্যবহার করে, যা আপনার ডেটাকে হ্যাকার, ইন্টারনেট সার্ভিস প্রোভাইডার (ISP), এবং সরকারি নজরদারি থেকে সুরক্ষিত রাখে। এটি পাবলিক Wi-Fi-তেও আপনার তথ্যের নিরাপত্তা নিশ্চিত করে।<br>
+                <strong>সোশ্যাল মিডিয়া বাইপাস</strong>: বাংলাদেশে ফেসবুক, হোয়াটসঅ্যাপ, টুইটার, ইনস্টাগ্রাম, এবং অন্যান্য সোশ্যাল মিডিয়া প্ল্যাটফর্ম মাঝেমধ্যে সরকারি নিষেধাজ্ঞার সম্মুখীন হয়। F BD Tunnel Pro VPN আপনাকে এই সকল নিষেধাজ্ঞা সহজেই বাইপাস করতে সাহায্য করে।<br>
+                <strong>উচ্চ-গতির স্ট্রিমিং</strong>: রবি এবং এয়ারটেল নেটওয়ার্কে HD এবং 4K স্ট্রিমিং উপভোগ করুন কোনো বাফারিং ছাড়াই। আমাদের VPN বাংলাদেশের জনপ্রিয় স্ট্রিমিং প্ল্যাটফর্ম যেমন বঙ্গ, বায়োস্কোপ, হইচই, এবং এটিএন বাংলার মতো সার্ভিসগুলোতে নিরবচ্ছিন্ন অ্যাক্সেস প্রদান করে।<br>
+                <strong>জিও-রেস্ট্রিকশন বাইপাস</strong>: বাংলাদেশের বাইরে থাকলেও আপনি বাংলাদেশি আইপি অ্যাড্রেস পেতে পারেন, যা আপনাকে বাংলাদেশি ব্যাংকিং সার্ভিস, স্থানীয় টিভি চ্যানেল, এবং অন্যান্য জিও-রেস্ট্রিক্টেড কনটেন্ট অ্যাক্সেস করতে সক্ষম করে।<br>
+                <strong>রবি এবং এয়ারটেলের জন্য অপ্টিমাইজড</strong>: আমাদের VPN সার্ভারগুলো রবি এবং এয়ারটেল নেটওয়ার্কের জন্য বিশেষভাবে অপ্টিমাইজ করা, যাতে আপনি সর্বোচ্চ গতি এবং স্থিতিশীলতা পান।<br>
+                <strong>নো-লগ পলিসি</strong>: আমরা আপনার ব্রাউজিং ইতিহাস, সেশনের সময়, বা কোনো ব্যক্তিগত তথ্য সংরক্ষণ করি না।<br>
+                <strong>একাধিক ডিভাইসে সাপোর্ট</strong>: একটি সাবস্ক্রিপশন দিয়ে আপনি মোবাইল, ট্যাবলেট, ল্যাপটপ, এবং ডেস্কটপে ব্যবহার করতে পারেন।
+            </p>
+            <h3>কেন F BD Tunnel Pro VPN বাংলাদেশের জন্য সেরা?</h3>
+            <p>
+                <strong>শুধুমাত্র বাংলাদেশের জন্য ডিজাইন</strong>: আমাদের সার্ভারগুলো বাংলাদেশের ইন্টারনেট পরিবেশ এবং ব্যবহারকারীদের চাহিদা মাথায় রেখে তৈরি করা হয়েছে। ঢাকা-ভিত্তিক সার্ভারগুলো দ্রুত এবং নির্ভরযোগ্য সংযোগ নিশ্চিত করে।<br>
+                <strong>সাশ্রয়ী মূল্য</strong>: আমরা সাশ্রয়ী মূল্যে প্রিমিয়াম সার্ভিস প্রদান করি। ফ্রি প্ল্যানে ১০ জিবি ডেটা প্রতি মাসে পাওয়া যায়।<br>
+                <strong>সহজ ব্যবহারযোগ্য ইন্টারফেস</strong>: কোনো রেজিস্ট্রেশন বা জটিল কনফিগারেশনের প্রয়োজন নেই।<br>
+                <strong>২৪/৭ গ্রাহক সহায়তা</strong>: যেকোনো সমস্যার জন্য টেলিগ্রাম বা ইমেইলের মাধ্যমে আমাদের সাথে যোগাযোগ করুন।
+            </p>
+            <h3>রবি এবং এয়ারটেল ব্যবহারকারীদের জন্য বিশেষ সুবিধা</h3>
+            <p>
+                <strong>নিরবচ্ছিন্ন স্ট্রিমিং</strong>: রবি এবং এয়ারটেলের ডেটা প্যাকেজে স্ট্রিমিংয়ের জন্য বিশেষ অপ্টিমাইজেশন।<br>
+                <strong>সোশ্যাল মিডিয়া অ্যাক্সেস</strong>: ফেসবুক, হোয়াটসঅ্যাপ, বা টিকটকের মতো প্ল্যাটফর্মে নিষেধাজ্ঞা বা ISP থ্রটলিং বাইপাস করুন।<br>
+                <strong>গেমিংয়ের জন্য অপ্টিমাইজড</strong>: পাবজি মোবাইল বা অন্যান্য গেম খেলার সময় কম পিং এবং স্থিতিশীল সংযোগ।<br>
+                <strong>ডেটা সাশ্রয়</strong>: আমাদের VPN রবি এবং এয়ারটেলের ডেটা প্যাকেজের সাথে সামঞ্জস্যপূর্ণ।
+            </p>
+            <h3>কীভাবে শুরু করবেন?</h3>
+            <p>
+                ১. <strong>অ্যাপ ডাউনলোড করুন</strong>: আমাদের অফিসিয়াল টেলিগ্রাম চ্যানেল (@FBD_Tunnel_Pro) থেকে অ্যাপ ডাউনলোড করুন।<br>
+                ২. <strong>সার্ভার সিলেক্ট করুন</strong>: ঢাকা-ভিত্তিক সার্ভার বা অন্য কোনো দেশের সার্ভার সিলেক্ট করুন।<br>
+                ৩. <strong>কানেক্ট করুন</strong>: এক ক্লিকে কানেক্ট করুন এবং নিরাপদ ইন্টারনেট উপভোগ করুন।<br>
+                ৪. <strong>সাপোর্ট নিন</strong>: কোনো সমস্যা হলে আমাদের টেলিগ্রাম (@Farukvaiya01) বা ইমেইল (md.faruk843534@gmail.com) এ যোগাযোগ করুন।
+            </p>
+            <h3>কেন F BD Tunnel Pro VPN বেছে নেবেন?</h3>
+            <p>
+                বাংলাদেশের ইন্টারনেট পরিবেশে সেন্সরশিপ, স্লো স্পিড, এবং জিও-রেস্ট্রিকশন একটি সাধারণ সমস্যা। F BD Tunnel Pro VPN আপনাকে এই সকল সমস্যা থেকে মুক্তি দিয়ে একটি নিরাপদ, দ্রুত, এবং সীমাবদ্ধতামুক্ত ইন্টারনেট অভিজ্ঞতা প্রদান করে। আমরা বাংলাদেশের প্রতিটি ব্যবহারকারীর জন্য ইন্টারনেট স্বাধীনতা এবং গোপনীয়তা নিশ্চিত করতে প্রতিশ্রুতিবদ্ধ।<br>
+                আজই F BD Tunnel Pro VPN ব্যবহার শুরু করুন এবং বাংলাদেশের ইন্টারনেট জগতে একটি নতুন মাত্রা উপভোগ করুন!
+            </p>
+        </section>
+
+        <section class="contact">
+            <h2>যোগাযোগ করুন</h2>
+            <p>
+                F BD Tunnel Pro VPN সম্পর্কে আরও জানতে, সাহায্য নিতে, বা আপনার মতামত শেয়ার করতে নিচের মাধ্যমগুলোর মাধ্যমে আমাদের সাথে যোগাযোগ করুন। আমরা সবসময় আপনার পাশে আছি!
+            </p>
+            <div class="contact-list">
+                <div class="contact-item">
+                    <a href="mailto:md.faruk843534@gmail.com" class="contact-btn" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </a>
+                    <span class="contact-label">ইমেইল</span>
+                </div>
+                <div class="contact-item">
+                    <a href="https://t.me/Farukvaiya01" class="contact-btn telegram-btn" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21.6 2.4l-2.6 12.2c-.2.9-.8 1.2-1.6 1.1l-4.1-3-2.1 2c-.2.2-.4.4-.8.4l.3-4.2 7.6-6.9c.3-.3 0-.5-.5-.3l-9.4 5.9-4-1.2c-.9-.3-1-1.2-.2-1.7l16.2-6.2c.7-.3 1.4.1 1.6.9z"/>
+                        </svg>
+                    </a>
+                    <span class="contact-label">Onwer I'd</span>
+                </div>
+                <div class="contact-item">
+                    <a href="https://t.me/FBD_Tunnel_Pro" class="contact-btn telegram-btn" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21.6 2.4l-2.6 12.2c-.2.9-.8 1.2-1.6 1.1l-4.1-3-2.1 2c-.2.2-.4.4-.8.4l.3-4.2 7.6-6.9c.3-.3 0-.5-.5-.3l-9.4 5.9-4-1.2c-.9-.3-1-1.2-.2-1.7l16.2-6.2c.7-.3 1.4.1 1.6.9z"/>
+                        </svg>
+                    </a>
+                    <span class="contact-label">F BD Tunnel Group</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            © ২০২৫ F BD Tunnel Pro। সর্বস্বত্ব সংরক্ষিত। | বাংলাদেশের ইন্টারনেট স্বাধীনতার জন্য 💚 দিয়ে তৈরি।
+        </footer>
+    </div>
+
+    <script>
+        function setTheme(theme) {
+            document.body.className = '';
+            document.body.classList.add(`${theme}-theme`);
+            localStorage.setItem('theme', theme);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'white';
+            setTheme(savedTheme);
+        });
+
+        const audio = document.getElementById('bgm');
+        const musicToggle = document.querySelector('.music-toggle');
+        const musicOnIcon = musicToggle.querySelector('.music-on-icon');
+        const musicOffIcon = musicToggle.querySelector('.music-off-icon');
+        let isPlaying = false;
+
+        audio.addEventListener('loadeddata', () => {
+            console.log('Audio file loaded successfully');
+        });
+
+        audio.addEventListener('error', (e) => {
+            console.error('Audio file failed to load:', e);
+            alert('অডিও ফাইল লোড করতে সমস্যা হচ্ছে। দয়া করে ইন্টারনেট সংযোগ চেক করুন বা অন্য ফাইল ব্যবহার করুন।');
+        });
+
+        function toggleMusic() {
+            if (isPlaying) {
+                audio.pause();
+                audio.currentTime = 0;
+                musicOnIcon.style.display = 'none';
+                musicOffIcon.style.display = 'block';
+                isPlaying = false;
+                console.log('Audio paused');
+            } else {
+                audio.play().then(() => {
+                    musicOnIcon.style.display = 'block';
+                    musicOffIcon.style.display = 'none';
+                    isPlaying = true;
+                    console.log('Audio playing');
+                }).catch(error => {
+                    console.error('Playback error:', error);
+                    alert('অডিও চালানো যায়নি। দয়া করে আবার চেষ্টা করুন।');
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            audio.play().then(() => {
+                isPlaying = true;
+                musicOnIcon.style.display = 'block';
+                musicOffIcon.style.display = 'none';
+                console.log('Audio auto-played successfully');
+            }).catch(error => {
+                console.log('Autoplay prevented:', error);
+                document.addEventListener('click', () => {
+                    if (!isPlaying) {
+                        audio.play().then(() => {
+                            isPlaying = true;
+                            musicOnIcon.style.display = 'block';
+                            musicOffIcon.style.display = 'none';
+                            console.log('Audio played after user interaction');
+                        }).catch(err => {
+                            console.error('Playback error after interaction:', err);
+                        });
+                    }
+                }, { once: true });
+            });
+        });
+
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(50px)';
+            section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
